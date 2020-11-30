@@ -279,6 +279,20 @@ kubectl autoscale deploy payment --min=1 --max=10 --cpu-percent=15
 
 ![image](https://user-images.githubusercontent.com/69283682/97790615-50c25e00-1c0d-11eb-85fe-9ffb20600c71.png)
 
+- siege 설치
+```
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  name: siege
+spec:
+  containers:
+  - name: siege
+    image: apexacme/siege-nginx
+EOF
+```
+
 - siege 로그인
 
 ```
